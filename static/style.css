@@ -19,7 +19,7 @@ body {
 
 /* Botones */
 .menu-item {
-    display: inline-block;       /* 🔥 IMPORTANTE para activar hover correctamente */
+    display: inline-block;       /* IMPORTANTE para activar hover correctamente */
     padding: 10px 18px;
     border-radius: 20px;
     text-decoration: none;
@@ -29,7 +29,7 @@ body {
         background 0.25s ease,
         transform 0.25s ease,
         box-shadow 0.30s ease;
-    position: relative;          /* 🔥 Hace que transform funcione mejor */
+    position: relative;          /*  Hace que transform funcione mejor */
 }
 
 /* Hover (activo siempre que el CSS cargue bien) */

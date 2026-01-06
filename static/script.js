@@ -54,15 +54,34 @@ function mostrar(seccion) {
 // Eventos
 btnSobreMi.addEventListener("click", () => {
     mostrar(sectionSobreMi);
+    activarBoton(btnSobreMi);
 });
 
 btnProyectos.addEventListener("click", () => {
     mostrar(sectionProyectos);
+    activarBoton(btnProyectos);
 });
 
 btnContacto.addEventListener("click", () => {
     mostrar(sectionContacto);
+    activarBoton(btnContacto);
 });
+
 btnExperiencia.addEventListener("click", () => {
     mostrar(sectionExperiencia);
+    activarBoton(btnExperiencia);
 });
+
+
+const botonesMenu = document.querySelectorAll(".menu-item");
+
+function activarBoton(botonActivo) {
+    botonesMenu.forEach(boton => {
+        boton.classList.remove("active");
+    });
+
+    botonActivo.classList.add("active");
+}
+// Inicializar mostrando "Sobre mí"
+activarBoton(btnSobreMi);
+mostrar(sectionSobreMi);
