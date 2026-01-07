@@ -166,3 +166,69 @@ body {
 p, h1, h2, h3, span, li {
     cursor: default;
 }
+
+
+/*Adaptacion movil*/
+@media (max-width: 768px) {
+
+    body {
+        padding: 0;
+    }
+
+    /* Layout general */
+    .layout {
+        flex-direction: column;
+        padding: 20px;
+        height: auto;
+    }
+
+    .contenido {
+        padding-left: 0;
+        align-items: flex-start;
+    }
+
+    /* Welcome */
+    .welcome h1 {
+        font-size: 42px;
+    }
+
+    .welcome p {
+        font-size: 16px;
+    }
+
+    /* Menú isla pasa abajo */
+    .menu-isla.derecha {
+        position: fixed;
+        bottom: 16px;
+        top: auto;
+        right: 50%;
+        transform: translateX(50%);
+        flex-direction: row;
+        padding: 10px 14px;
+        z-index: 10;
+    }
+
+    .menu-item {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+
+    /* Contenedores */
+    .contenedor-sobre-mi {
+        width: 100%;
+        margin-top: 20px;
+        font-size: 16px;
+    }
+
+    /* Carrusel redes */
+    .social-carousel {
+        top: 12px;
+        right: 12px;
+        animation-duration: 20s;
+    }
+
+    .social-carousel img {
+        width: 26px;
+        height: 26px;
+    }
+}
