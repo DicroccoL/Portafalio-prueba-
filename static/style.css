@@ -160,3 +160,9 @@ body::before {
     100% { transform: translateX(0); }
 }
 
+body {
+    cursor: default;
+}
+p, h1, h2, h3, span, li {
+    cursor: default;
+}
