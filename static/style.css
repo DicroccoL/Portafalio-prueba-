@@ -1,11 +1,83 @@
-/* Estilos base */
 body {
     background: #0a0a0f;
     font-family: "Roboto", sans-serif;
     color: white;
+    margin: 0;
+    overflow: hidden;
 }
 
-/* Menú en forma de cápsula */
+body::before {
+    content: "";
+    position: fixed;
+    inset: -50%;
+    z-index: -2;
+
+    background: radial-gradient(
+        circle at 30% 30%,
+        rgba(255,255,255,0.04),
+        rgba(0,0,0,0.9)
+    );
+
+    background-size: 200% 200%;
+    animation: darkWaves 80s ease-in-out infinite;
+}
+
+
+@keyframes darkWaves {
+    0% {
+        background-position: 0% 0%;
+        transform: scale(1);
+    }
+
+    50% {
+        background-position: 100% 100%;
+        transform: scale(1.02);
+    }
+
+    100% {
+        background-position: 0% 0%;
+        transform: scale(1);
+    }
+}
+
+
+
+/*hasta aca lo nuevo    */
+
+
+
+.layout {
+    display: flex;
+    height: 100vh;
+    padding: 60px;
+    box-sizing: border-box;
+}
+
+.contenido {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+}
+
+/* Welcome */
+.welcome {
+    max-width: 600px;
+}
+
+.welcome h1 {
+    font-size: 72px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.welcome p {
+    font-size: 18px;
+    opacity: 0.75;
+    line-height: 1.6;
+}
+
+/* Menú isla */
 .menu-isla {
     display: flex;
     gap: 8px;
@@ -14,45 +86,77 @@ body {
     border-radius: 40px;
     backdrop-filter: blur(10px);
     width: fit-content;
-    margin: 40px auto;
+}
+
+.menu-isla.derecha {
+    position: fixed;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    flex-direction: column;
 }
 
 /* Botones */
 .menu-item {
-    display: inline-block;       /* IMPORTANTE para activar hover correctamente */
     padding: 10px 18px;
     border-radius: 20px;
     text-decoration: none;
     color: white;
     font-size: 16px;
-    transition: 
-        background 0.25s ease,
-        transform 0.25s ease,
-        box-shadow 0.30s ease;
-    position: relative;          /*  Hace que transform funcione mejor */
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.3s ease;
 }
 
-/* Hover (activo siempre que el CSS cargue bien) */
 .menu-item:hover {
     background: rgba(255,255,255,0.15);
     transform: translateY(-3px);
     box-shadow: 0px 8px 18px rgba(0,0,0,0.40);
 }
 
-/* El botón actual */
 .menu-item.active {
     background: #ffffff;
     color: #000;
 }
 
+/* Contenido */
 .contenedor-sobre-mi {
     width: 70%;
-    margin: 30px auto;
     padding: 25px;
     background: rgba(255,255,255,0.05);
     border-radius: 20px;
     backdrop-filter: blur(8px);
-    color: white;
     font-size: 18px;
-    display: none; /* Oculto por defecto */
+    display: none;
 }
+
+
+/* Estilo de carrusel social */
+
+.social-carousel {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    animation: moveCarousel 12s linear infinite;
+}
+
+.social-carousel img {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.social-carousel img:hover {
+    transform: scale(1.2);
+    filter: brightness(1.4);
+}
+
+/* Animación infinita */
+@keyframes moveCarousel {
+    0%   { transform: translateX(0); }
+    50%  { transform: translateX(-60px); }
+    100% { transform: translateX(0); }
+}
+

@@ -1,82 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="/static/style.css">
-    <title>Mi portafilio-inicio</title>
+
+    <title>Mi portafolio</title>
 </head>
+
 <body>
- <!-- Este div será la capa donde dibujaremos la sombra que sigue al mouse -->
+
+<!-- Sombra del cursor -->
 <div id="cursor-shadow"></div>
-
-<div class="menu-isla">
-    <a id="btn-sobre-mi"  href="#" class="menu-item active">Sobre mi</a>
-    <a id="btn-proyectos" href="#" class="menu-item">Proyectos</a>
-    <a id="btn-experiencia" href="#" class="menu-item">Experiencia</a>
-    <a id="btn-contacto" href="#" class="menu-item">Contacto</a>
+<!-- CARRUSEL REDES -->
+<div class="social-carousel">
+    <a href="https://www.linkedin.com/in/lucas-di-crocco-b213aa30b/" target="_blank">
+        <img src="docs\icons\linkedin.svg" alt="LinkedIn">
+    </a>
+    <a href="https://github.com/DicroccoL" target="_blank">
+        <img src="docs\icons\github.svg" alt="GitHub">
+    </a>
+    <a href="mailto:tuemail@gmail.com">
+        <img src="docs\icons\correo.svg" alt="Email">
+    </a>
 </div>
 
+<div class="background background--color-map"></div>
+<div class="layout">
 
-<div id="experiencia" class="contenedor-sobre-mi" style="display: none;">
-    <h2>Experiencia Laboral</h2>
-    <p>
-       <ul>
-        <li><strong>Empleado Gastronomico McDonald's (jun. 2022 - abr. 2025)</strong></li>
-            <p>  
-                Atención al cliente, gestión de pedidos, control de stock, tareas de cocina, empaque y cumplimiento de
-                normas de higiene
-            </p>
-        <li><strong>Soporte tecnico Freelance (ene. 2020 - agost.2025)</strong></li>
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="contenido">
+
+        <!-- WELCOME / CARÁTULA -->
+        <section id="welcome" class="welcome">
+            <h1>Welcome</h1>
             <p>
-                Reparación y mantenimiento de PC/notebooks/consolas, instalación y configuración de sistemas
-                operativos, soporte a usuarios.
+                Soy Lucas Di Crocco<br>
+                Estudiante de programación & soporte IT
             </p>
-        <li><strong>Soporte Tecnico Tupperware Brands (agost. 2025 - Actualidad)</strong></li>
-        <p> 
-            -Help desk
-            -Migracion de usarios a nuevo dominio en Azure AD
-            -Migracion de sistema operativo
-            -Mantenimiento de sistema operativo para garantizar buen funcionamiento
-            -Gestión de políticas de seguridad
-            -Administración de identidades y accesos
-            -Configuración y mantenimiento de periféricos (impresoras, escáneres, etc.).
-        </p>
-    </p>
-</div>
- 
-<div id="sobre-mi" class="contenedor-sobre-mi" style="display: none;">
-    <h2>Sobre mí</h2>
-    <p>
-        Actualmente estudiante de la Tecnicatura Universitaria en Programación en la UTN y Trabajando para Tupperware Brands en el area de Sistemas como Soporte Tecnico.<br>
+        </section>
 
-        Me destaco por mi responsabilidad, rápida capacidad de aprendizaje y adaptabilidad. Tengo experiencia en soporte técnico, atención al cliente y reparación de equipos informáticos.
-        
-        <br> Busco desarrollarme
-        profesionalmente en el area de desarrollo y IT. <br>
-        Para contactarme puede ser por este mismo medio o por mail: lucasdicrocco@hotmail.com
-    </p>
+        <!-- SOBRE MI -->
+        <div id="sobre-mi" class="contenedor-sobre-mi">
+            <h2>Sobre mí</h2>
+            <p>
+                Actualmente estudiante de la Tecnicatura Universitaria en Programación en la UTN y trabajando
+                para Tupperware Brands en el área de Sistemas como Soporte Técnico.<br><br>
+
+                Me destaco por mi responsabilidad, rápida capacidad de aprendizaje y adaptabilidad.
+                Tengo experiencia en soporte técnico, atención al cliente y reparación de equipos informáticos.<br><br>
+
+                Busco desarrollarme profesionalmente en el área de desarrollo e IT.<br>
+                Contacto: lucasdicrocco@hotmail.com
+            </p>
+        </div>
+
+        <!-- PROYECTOS -->
+        <div id="proyectos" class="contenedor-sobre-mi">
+            <h2>Proyectos</h2>
+            <p>Aquí van tus proyectos...</p>
+        </div>
+
+        <!-- EXPERIENCIA -->
+        <div id="experiencia" class="contenedor-sobre-mi">
+            <h2>Experiencia Laboral</h2>
+            <ul>
+                <li>
+                    <strong>McDonald's – Empleado Gastronómico (2022 - 2025)</strong>
+                    <p>Atención al cliente, gestión de pedidos, control de stock y normas de higiene.</p>
+                </li>
+
+                <li>
+                    <strong>Soporte Técnico Freelance (2020 - 2025)</strong>
+                    <p>Reparación de PC, instalación de SO y soporte a usuarios.</p>
+                </li>
+
+                <li>
+                    <strong>Tupperware Brands – Soporte Técnico (2025 - Actualidad)</strong>
+                    <p>
+                        Help desk, migraciones a Azure AD, mantenimiento de SO,
+                        gestión de identidades y periféricos.
+                    </p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- CONTACTO -->
+        <div id="contacto" class="contenedor-sobre-mi">
+            <h2>Contacto</h2>
+            <a href="https://github.com/DicroccoL" target="_blank" style="color:aquamarine">GitHub</a><br>
+            <a href="https://www.linkedin.com/in/lucas-di-crocco-b213aa30b/" target="_blank" style="color:aquamarine">LinkedIn</a><br><br>
+            <a href="docs/CV_Lucas_Di_Crocco_Actualizado.pdf" download style="color:aquamarine">
+                Descargar CV
+            </a>
+        </div>
+
+    </div>
+
+    <!-- MENÚ ISLA -->
+    <div class="menu-isla derecha">
+        <a id="btn-sobre-mi" class="menu-item">Sobre mí</a>
+        <a id="btn-proyectos" class="menu-item">Proyectos</a>
+        <a id="btn-experiencia" class="menu-item">Experiencia</a>
+        <a id="btn-contacto" class="menu-item">Contacto</a>
+    </div>
+
 </div>
 
-<div id="proyectos" class="contenedor-sobre-mi" style="display: none;">
-    <h2>Proyectos</h2>
-    <p>Aquí van tus proyectos...</p>
-</div>
-
-<div id="contacto" class="contenedor-sobre-mi" style="display: none;">
-    <h2>Contacto</h2>
-   <a href="https://github.com/DicroccoL" style="color:aquamarine" |target="_blank">GitHub</a>
- <br> 
-   <a href="https://www.linkedin.com/in/lucas-di-crocco-b213aa30b/" style="color:aquamarine" target="_blank">Linkedin</a>
-    <br>
-    <a href="docs\CV_Lucas_Di_Crocco_Actualizado.pdf" style="color:aquamarine" download>
-    Descargar CV
-</div>
-
-
-</div>
-    <script src="/static/script.js"></script>
+<script src="/static/script.js"></script>
 </body>
 </html>

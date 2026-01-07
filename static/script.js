@@ -1,57 +1,53 @@
-const boton=document.getElementById('btn-sobre-mi');
-const textoSecreto = document.getElementById('info-sobre-mi');
-boton.addEventListener('click', () => {
-    // Esta línea es la que cambia el CSS de "oculto" a "visible"
-    textoSecreto.style.display = 'block';
-});
-// Escucha cuando el mouse se mueve en toda la página
-document.addEventListener("mousemove", (e) => {
+// ==========================
+// REFERENCIAS DOM
+// ==========================
 
-    // Seleccionamos el div que contiene la sombra
-    const shadow = document.getElementById("cursor-shadow");
+// Welcome
+const welcome = document.getElementById("welcome");
 
-    // Guardamos la posición del mouse
-    const x = e.clientX;   // posición horizontal
-    const y = e.clientY;   // posición vertical
-
-    // Cambiamos el gradiente para que el centro esté donde está el mouse
-    shadow.style.background = `
-        radial-gradient(
-            circle at ${x}px ${y}px,
-            rgba(255, 255, 255, 0.10),
-            rgba(0, 0, 0, 0.80) 5%
-        )
-    `;
-});
-
-//logica de mostrar boton o no segun lo clickeado 
-
-
+// Botones menú
 const btnSobreMi = document.getElementById("btn-sobre-mi");
 const btnProyectos = document.getElementById("btn-proyectos");
 const btnContacto = document.getElementById("btn-contacto");
 const btnExperiencia = document.getElementById("btn-experiencia");
 
-
+// Secciones
 const sectionSobreMi = document.getElementById("sobre-mi");
 const sectionProyectos = document.getElementById("proyectos");
 const sectionContacto = document.getElementById("contacto");
 const sectionExperiencia = document.getElementById("experiencia");
 
+// Todos los botones
+const botonesMenu = document.querySelectorAll(".menu-item");
+
+
+// ==========================
+// FUNCIONES
+// ==========================
+
 function ocultarTodo() {
+    welcome.style.display = "none";
     sectionSobreMi.style.display = "none";
     sectionProyectos.style.display = "none";
     sectionContacto.style.display = "none";
     sectionExperiencia.style.display = "none";
 }
 
-// Mostrar solo la sección indicada
 function mostrar(seccion) {
     ocultarTodo();
     seccion.style.display = "block";
 }
 
-// Eventos
+function activarBoton(botonActivo) {
+    botonesMenu.forEach(boton => boton.classList.remove("active"));
+    botonActivo.classList.add("active");
+}
+
+
+// ==========================
+// EVENTOS MENÚ
+// ==========================
+
 btnSobreMi.addEventListener("click", () => {
     mostrar(sectionSobreMi);
     activarBoton(btnSobreMi);
@@ -62,26 +58,39 @@ btnProyectos.addEventListener("click", () => {
     activarBoton(btnProyectos);
 });
 
-btnContacto.addEventListener("click", () => {
-    mostrar(sectionContacto);
-    activarBoton(btnContacto);
-});
-
 btnExperiencia.addEventListener("click", () => {
     mostrar(sectionExperiencia);
     activarBoton(btnExperiencia);
 });
 
+btnContacto.addEventListener("click", () => {
+    mostrar(sectionContacto);
+    activarBoton(btnContacto);
+});
 
-const botonesMenu = document.querySelectorAll(".menu-item");
 
-function activarBoton(botonActivo) {
-    botonesMenu.forEach(boton => {
-        boton.classList.remove("active");
-    });
+// ==========================
+// EFECTO CURSOR
+// ==========================
 
-    botonActivo.classList.add("active");
-}
-// Inicializar mostrando "Sobre mí"
-activarBoton(btnSobreMi);
-mostrar(sectionSobreMi);
+document.addEventListener("mousemove", (e) => {
+    const shadow = document.getElementById("cursor-shadow");
+    const x = e.clientX;
+    const y = e.clientY;
+
+    shadow.style.background = `
+        radial-gradient(
+            circle at ${x}px ${y}px,
+            rgba(255, 255, 255, 0.10),
+            rgba(0, 0, 0, 0.80) 5%
+        )
+    `;
+});
+
+
+// ==========================
+// ESTADO INICIAL
+// ==========================
+
+ocultarTodo();
+welcome.style.display = "block";
